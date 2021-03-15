@@ -1,5 +1,6 @@
 """Check that the GitHub release tag matches the version."""
 import argparse
+import json
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
