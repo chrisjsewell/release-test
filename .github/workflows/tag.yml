@@ -9,4 +9,9 @@ jobs:
   check-tag:
     runs-on: ubuntu-latest
     steps:
-    - run: echo $GITHUB_REF
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - run: python ./check_release_tag.py $GITHUB_REF setup.json
