@@ -10,7 +10,7 @@ if __name__ == '__main__':
     assert args.GITHUB_REF.startswith('refs/tags/v'), f'GITHUB_REF should start with "refs/tags/v": {args.GITHUB_REF}'
     tag_version = args.GITHUB_REF[11:]
     with open(args.SETUP_PATH) as handle:
-        data = json.read(handle)
+        data = json.load(handle)
     pypi_version = data['version']
     assert tag_version == pypi_version, f'{tag_version} != {pypi_version}'
 
